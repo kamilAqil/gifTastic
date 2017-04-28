@@ -1,0 +1,33 @@
+.border{
+  border: 1px solid black;
+}
+
+#mainContainer{
+  height: 352px;
+}
+
+#buttonsRow{
+  height: 20% auto;
+  padding: 5px;
+}
+
+#contentRow{
+  height:auto;
+}
+
+#gifsColumn{
+  height: 302px;
+  overflow: auto;
+
+}
+
+#searchFormColumn{
+  height: 100%;
+}
+
+.gifs{
+  height: 100px;
+  width: 150px;
+  margin: 2px;
+  border: 1px solid white;
+}
