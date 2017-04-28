@@ -2,8 +2,15 @@
   border: 1px solid black;
 }
 
+.row{
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #mainContainer{
   height: 352px;
+  padding: 0;
+  margin-top: 10px;
 }
 
 #buttonsRow{
@@ -15,19 +22,47 @@
   height:auto;
 }
 
+.gifButton{
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
 #gifsColumn{
   height: 302px;
   overflow: auto;
+  padding: 0;
+  background-color: black;
+}
 
+.rating{
+  color: white;
+}
+
+.gifCol{
+  text-align: center;
+  margin-top: 5px;
 }
 
 #searchFormColumn{
-  height: 100%;
+  height: 302px;
 }
 
 .gifs{
-  height: 100px;
-  width: 150px;
-  margin: 2px;
+  height: 200px;
+  width: 250px;
+  margin: auto;
   border: 1px solid white;
+}
+
+#gifForm{
+  margin-top: 15%;
+}
+
+#keyword{
+  text-align: center;
+}
+
+#searchRow{
+  height: 100%;
+  text-align: center;
 }

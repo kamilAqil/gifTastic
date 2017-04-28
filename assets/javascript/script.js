@@ -9,13 +9,15 @@ $(document).ready(function(){
   // to the buttons row
   for (var i = 0; i < topics.length; i++) {
     var buttonTopic = topics[i];
-    var button = $('<button>');
-    button.addClass('gifButton btn btn-default');
-    button.attr('buttonTopic', buttonTopic);
-    button.html(buttonTopic);
-    $('#buttonsRow').append(button);
+    createButton(buttonTopic);
   }
 
+  // gifForm prevent default
+  $('#gifForm').submit(function(e){
+    return false;
+  });
+
+  // gifButton click Event
   $(document).on('click','.gifButton',function(){
     // clear the gifsRow
     $('#gifsRow').html("");
@@ -47,7 +49,7 @@ $(document).ready(function(){
       $.ajax({
         type: "GET",
         url : url,
-        Access-Control-Allow-Origin: *
+        "Access-Control-Allow-Origin": "*"
       })
       .done(function(res){
         // everything will happen inside of here when the data is returned
@@ -73,7 +75,7 @@ $(document).ready(function(){
             class : "rating",
           });
           p.html("Rating: "+gifObject.rating);
-          col.addClass('col-md-4');
+          col.addClass('col-md-6 gifCol border');
           col.html(el);
           col.prepend(p);
           $('#gifsRow').append(col);
@@ -84,6 +86,56 @@ $(document).ready(function(){
 
   });
 
+  // add to buttons click event
+  $(document).on('click','#addToButtons',function(){
+    event.preventDefault();
+    console.log("add to buttons clicked");
+    var topic = $('#keyword').val();
+    console.log(topic);
+    createButton(topic);
+
+
+
+  });
+
+  $('#clearGifs').on('click',function(){
+    console.log("clear clicked");
+    $('#buttonsRow').html("");
+  })
+
+  // when a gif is clicked it will check the
+  // animated attribute if
+  $(document).on('click','.gifs',function(){
+    var gif = $(this);
+    var animated = gif.attr("animated");
+    console.log(gif);
+    console.log(animated);
+    if(animated == "nope"){
+      console.log("gif not animated");
+      $(this).attr({
+        src:$(this).attr('data_animate'),
+        animated : "tru"
+      });
+    }else{
+      console.log("gif is animated");
+      $(this).attr({
+        src:$(this).attr('data_still'),
+        animated : "nope"
+      });
+    }
+
+  });
+
+
+
+
+  function createButton(buttonTopic){
+  var button = $('<button>');
+  button.addClass('gifButton btn btn-default');
+  button.attr('buttonTopic', buttonTopic);
+  button.html(buttonTopic);
+  $('#buttonsRow').append(button);
+}
 
 
 

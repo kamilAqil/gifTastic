@@ -1,21 +1,5 @@
 Things To Complete :
-  - Layout
-  - button functionality / dynamic click event handling
-  - filter gifs
-
-
-
-Features :
-  - click to animate
-  - click button to show 10 gifs on topic
-  -
-
-
-  Api Key
-
-    - dc6zaTOxFJmzC
-    - make sure to request only ratings up to pg-13
-    - limit to 10 
+  - on click animation
 
 
 
